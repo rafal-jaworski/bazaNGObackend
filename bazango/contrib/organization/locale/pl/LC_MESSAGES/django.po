@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-09 07:06+0200\n"
+"POT-Creation-Date: 2017-09-09 10:27+0200\n"
 "PO-Revision-Date: 2017-09-09 06:38+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -20,66 +20,66 @@ msgstr ""
 "%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-#: admin.py:19
+#: contrib/organization/admin.py:25
 msgid "Mark selected organizations as active"
 msgstr "Oznacz wybrane organizacje jako aktywne"
 
-#: admin.py:23
+#: contrib/organization/admin.py:29
 msgid "Mark selected organizations as inactive"
 msgstr "Oznacz wybrane organizacje jako nieaktywne"
 
-#: apps.py:7 models.py:64
+#: contrib/organization/apps.py:7 contrib/organization/models.py:63
 msgid "Organization"
 msgstr "Organizacja"
 
-#: models.py:30
+#: contrib/organization/models.py:30
 msgid "name"
 msgstr "nazwa"
 
-#: models.py:33
+#: contrib/organization/models.py:33
 msgid "Category"
 msgstr "Kategoria"
 
-#: models.py:34
+#: contrib/organization/models.py:34
 msgid "Categories"
 msgstr "Kategorie"
 
-#: models.py:42
+#: contrib/organization/models.py:41
 msgid "ID in KRS database"
 msgstr "ID w bazie KRS"
 
-#: models.py:45
+#: contrib/organization/models.py:44 contrib/organization/models.py:73
 msgid "Name"
 msgstr "Nazwa"
 
-#: models.py:46
+#: contrib/organization/models.py:45
 msgid "Short name"
 msgstr "Nazwa skrócona"
 
-#: models.py:47
+#: contrib/organization/models.py:46 contrib/organization/models.py:74
 msgid "Purpose of the organization"
 msgstr "Cel organizacji"
 
-#: models.py:48
+#: contrib/organization/models.py:47
 msgid "Date of the registration"
 msgstr "Data rejestracji"
 
-#: models.py:56
+#: contrib/organization/models.py:55
 msgid "organization|is_active"
 msgstr "jest aktywna"
 
-#: models.py:65
+#: contrib/organization/models.py:64
 msgid "Organizations"
 msgstr "Organizacje"
 
-#: models.py:78
+#: contrib/organization/models.py:79
 msgid "phone number"
 msgstr "numer telefonu"
 
-#: models.py:83
+#: contrib/organization/models.py:84
 msgid "Organization profile"
 msgstr "Profil organizacji"
 
-#: models.py:84
+#: contrib/organization/models.py:85
 msgid "Organization profiles"
 msgstr "Profile organizacji"

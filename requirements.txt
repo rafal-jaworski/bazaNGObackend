@@ -12,3 +12,4 @@ six
 gunicorn
 dj-database-url
 whitenoise
+bootstrap-admin
