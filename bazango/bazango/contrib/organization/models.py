@@ -75,3 +75,6 @@ class OrganizationProfile(models.Model):
         return '{} profile'.format(self.organization.name)
 
 
+class Category(models.Model):
+    name = models.CharField(verbose_name=_('nazwa'), max_length=255,)
+    organization = models.ForeignKey(Organization)

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Organization, OrganizationProfile
+from .models import Organization, OrganizationProfile, Category
 from django.utils.translation import ugettext_lazy as _
 
 
@@ -25,4 +25,9 @@ class OrganizationAdmin(admin.ModelAdmin):
 
 @admin.register(OrganizationProfile)
 class OrganizationProfileAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
     pass
