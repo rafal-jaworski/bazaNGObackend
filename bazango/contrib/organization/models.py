@@ -87,3 +87,13 @@ class OrganizationProfile(models.Model):
     def __str__(self):
         return '{} profile'.format(self.organization.name)
 
+
+class OrganizationProfileProposedChange(OrganizationProfile):
+    profile = models.ForeignKey(OrganizationProfile, related_name='suggestions')
+
+    class Meta:
+        verbose_name = _('Organization profile proposed change')
+        verbose_name_plural = _('Organization profile proposed changes')
+
+    def __str__(self):
+        return '{} proposed change'.format(self.profile)

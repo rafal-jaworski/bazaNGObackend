@@ -1,8 +1,8 @@
 from rest_framework import viewsets
 
 from bazango.contrib.organization.filters import OrganizationFilterSet
-from .models import Organization, Category
-from .serializers import OrganizationSerializer, CategorySerializer
+from .models import Organization, Category, OrganizationProfileProposedChange
+from .serializers import OrganizationSerializer, CategorySerializer, OrganizationProfileProposedChangeSerializer
 
 
 class OrganizationViewSet(viewsets.ModelViewSet):
@@ -19,3 +19,6 @@ class CategoryViewSet(viewsets.ModelViewSet):
     pagination_class = None
 
 
+class OrganizationProfileProposedChangeViewSet(viewsets.ModelViewSet):
+    queryset = OrganizationProfileProposedChange.objects.all()
+    serializer_class = OrganizationProfileProposedChangeSerializer

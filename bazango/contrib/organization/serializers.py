@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Organization, OrganizationProfile, Category
+from .models import Organization, OrganizationProfile, Category, OrganizationProfileProposedChange
 from taggit_serializer.serializers import (TagListSerializerField, TaggitSerializer)
 
 
@@ -27,3 +27,10 @@ class OrganizationSerializer(TaggitSerializer, serializers.ModelSerializer):
         fields = '__all__'
         depth = 1
 
+
+class OrganizationProfileProposedChangeSerializer(serializers.ModelSerializer):
+    profile = OrganizationProfileSerializer(read_only=True)
+
+    class Meta:
+        model = OrganizationProfileProposedChange
+        fields = '__all__'

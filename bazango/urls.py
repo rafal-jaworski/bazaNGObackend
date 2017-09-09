@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from rest_framework.routers import DefaultRouter
-from .contrib.organization.views import OrganizationViewSet, CategoryViewSet
+from .contrib.organization.views import OrganizationViewSet, CategoryViewSet, OrganizationProfileProposedChangeViewSet
 from .contrib.tags.views import TagViewSet
 
 
@@ -24,6 +24,7 @@ router = DefaultRouter()
 router.register(r'organization', OrganizationViewSet)
 router.register(r'tag', TagViewSet)
 router.register(r'category', CategoryViewSet)
+router.register(r'category-proposal', OrganizationProfileProposedChangeViewSet)
 
 api_urlpatterns = [
     url(r'api-auth/', include('rest_framework.urls', namespace='rest_framework')),
