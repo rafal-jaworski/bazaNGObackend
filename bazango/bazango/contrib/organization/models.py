@@ -42,7 +42,7 @@ class Organization(models.Model):
     flat_number = models.CharField(max_length=255)
     city = models.CharField(max_length=255)
     country = models.CharField(max_length=255)
-    is_active = models.BooleanField(default=True)
+    is_active = models.BooleanField(verbose_name=_('organization|is_active'), default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
 

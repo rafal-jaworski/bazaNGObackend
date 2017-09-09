@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-09 04:35+0200\n"
-"PO-Revision-Date: 2017-09-09 04:35+0200\n"
+"POT-Creation-Date: 2017-09-09 06:37+0200\n"
+"PO-Revision-Date: 2017-09-09 06:38+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pl\n"
@@ -20,55 +20,54 @@ msgstr ""
 "%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-#: bazango/contrib/organization/apps.py:7
-#: bazango/contrib/organization/models.py:52
+#: admin.py:18
+msgid "Mark selected organizations as active"
+msgstr "Oznacz wybrane organizacje jako aktywne"
+
+#: admin.py:22
+msgid "Mark selected organizations as inactive"
+msgstr "Oznacz wybrane organizacje jako nieaktywne"
+
+#: apps.py:7 models.py:52
 msgid "Organization"
 msgstr "Organizacja"
 
-#: bazango/contrib/organization/models.py:31
+#: models.py:31
 msgid "ID in KRS database"
 msgstr "ID w bazie KRS"
 
-#: bazango/contrib/organization/models.py:34
+#: models.py:34
 msgid "Name"
 msgstr "Nazwa"
 
-#: bazango/contrib/organization/models.py:35
+#: models.py:35
 msgid "Short name"
 msgstr "Nazwa skrócona"
 
-#: bazango/contrib/organization/models.py:36
+#: models.py:36
 msgid "Purpose of the organization"
 msgstr "Cel organizacji"
 
-#: bazango/contrib/organization/models.py:37
+#: models.py:37
 msgid "Date of the registration"
 msgstr "Data rejestracji"
 
-#: bazango/contrib/organization/models.py:53
+#: models.py:45
+msgid "organization|is_active"
+msgstr "jest aktywna"
+
+#: models.py:53
 msgid "Organizations"
 msgstr "Organizacje"
 
-#: bazango/contrib/organization/models.py:66
+#: models.py:66
 msgid "phone number"
 msgstr "numer telefonu"
 
-#: bazango/contrib/organization/models.py:71
+#: models.py:71
 msgid "Organization profile"
 msgstr "Profil organizacji"
 
-#: bazango/contrib/organization/models.py:72
+#: models.py:72
 msgid "Organization profiles"
 msgstr "Profile organizacji"
-
-#: bazango/contrib/organization/models.py:75
-msgid "{} profile"
-msgstr "profil {}"
-
-#: bazango/settings.py:130
-msgid "Polish"
-msgstr "Polski"
-
-#: bazango/settings.py:131
-msgid "English"
-msgstr "Angielski"
