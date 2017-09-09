@@ -3,46 +3,72 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-09 01:14+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2017-09-09 04:35+0200\n"
+"PO-Revision-Date: 2017-09-09 04:35+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n"
 "%100<12 || n%100>=14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
 "%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
-#: bazango/contrib/organization/models.py:23
-msgid "ID in KRS database"
-msgstr "ID w bazie KRS"
+"X-Generator: Poedit 1.8.7.1\n"
 
-#: bazango/contrib/organization/models.py:25
-msgid "Name"
-msgstr "Nazwa"
-
-#: bazango/contrib/organization/models.py:26
-msgid "Short name"
-msgstr "Nazwa skrócona"
-
-#: bazango/contrib/organization/models.py:27
-msgid "Purpose of the organization"
-msgstr "Cel organizacji"
-
-#: bazango/contrib/organization/models.py:28
-msgid "Date of the registration"
-msgstr "Data rejestracji"
-
-#: bazango/contrib/organization/models.py:41
+#: bazango/contrib/organization/apps.py:7
+#: bazango/contrib/organization/models.py:52
 msgid "Organization"
 msgstr "Organizacja"
 
-#: bazango/contrib/organization/models.py:42
+#: bazango/contrib/organization/models.py:31
+msgid "ID in KRS database"
+msgstr "ID w bazie KRS"
+
+#: bazango/contrib/organization/models.py:34
+msgid "Name"
+msgstr "Nazwa"
+
+#: bazango/contrib/organization/models.py:35
+msgid "Short name"
+msgstr "Nazwa skrócona"
+
+#: bazango/contrib/organization/models.py:36
+msgid "Purpose of the organization"
+msgstr "Cel organizacji"
+
+#: bazango/contrib/organization/models.py:37
+msgid "Date of the registration"
+msgstr "Data rejestracji"
+
+#: bazango/contrib/organization/models.py:53
 msgid "Organizations"
 msgstr "Organizacje"
+
+#: bazango/contrib/organization/models.py:66
+msgid "phone number"
+msgstr "numer telefonu"
+
+#: bazango/contrib/organization/models.py:71
+msgid "Organization profile"
+msgstr "Profil organizacji"
+
+#: bazango/contrib/organization/models.py:72
+msgid "Organization profiles"
+msgstr "Profile organizacji"
+
+#: bazango/contrib/organization/models.py:75
+msgid "{} profile"
+msgstr "profil {}"
+
+#: bazango/settings.py:130
+msgid "Polish"
+msgstr "Polski"
+
+#: bazango/settings.py:131
+msgid "English"
+msgstr "Angielski"

@@ -1,3 +1,11 @@
 Django>=1.11.5 <1.12
 psycopg2
 requests
+djangorestframework
+markdown
+django-filter
+django-cors-headers
+djangorestframework-camel-case
+django-taggit
+django-taggit-serializer
+six
