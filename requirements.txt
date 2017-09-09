@@ -13,3 +13,7 @@ gunicorn
 dj-database-url
 whitenoise
 bootstrap-admin
+django-excel
+pyexcel-xls
+pyexcel-xlsx
+pyexcel-ods
