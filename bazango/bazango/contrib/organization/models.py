@@ -26,25 +26,36 @@ def dequote(s):
     return s
 
 
+class Category(models.Model):
+    name = models.CharField(verbose_name=_('name'), max_length=255,)
+
+    class Meta:
+        verbose_name = _('Category')
+        verbose_name_plural = _('Categories')
+
+    def __str__(self):
+        return '{}({})'.format(self.name, self.organization_set.count())
+
+
 class Organization(models.Model):
-    # USABLE
-    external_id = models.IntegerField(verbose_name=_('ID in KRS database'))
-    nip = models.CharField(max_length=255)
-    krs = models.CharField(unique=True, max_length=255)
-    name = models.CharField(verbose_name=_('Name'), max_length=255)
-    short_name = models.CharField(verbose_name=_('Short name'), max_length=255)
-    purpose = models.TextField(verbose_name=_('Purpose of the organization'))
-    register_at = models.DateField(verbose_name=_('Date of the registration'))
-    address = models.CharField(max_length=255)
-    postal_code = models.CharField(max_length=255)
-    street = models.CharField(max_length=255)
-    street_number = models.CharField(max_length=255)
-    flat_number = models.CharField(max_length=255)
-    city = models.CharField(max_length=255)
-    country = models.CharField(max_length=255)
+    external_id = models.IntegerField(blank=True, null=True, verbose_name=_('ID in KRS database'))
+    nip = models.CharField(blank=True, max_length=255)
+    krs = models.CharField(blank=True, unique=True, max_length=255)
+    name = models.CharField(blank=True, verbose_name=_('Name'), max_length=255)
+    short_name = models.CharField(blank=True, verbose_name=_('Short name'), max_length=255)
+    purpose = models.TextField(blank=True, verbose_name=_('Purpose of the organization'))
+    register_at = models.DateField(blank=True, null=True, verbose_name=_('Date of the registration'))
+    address = models.CharField(blank=True, max_length=255)
+    postal_code = models.CharField(blank=True, max_length=255)
+    street = models.CharField(blank=True, max_length=255)
+    street_number = models.CharField(blank=True, max_length=255)
+    flat_number = models.CharField(blank=True, max_length=255)
+    city = models.CharField(blank=True, max_length=255)
+    country = models.CharField(blank=True, max_length=255)
     is_active = models.BooleanField(verbose_name=_('organization|is_active'), default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
+    categories = models.ManyToManyField(Category, null=True, blank=True, related_name='organizations')
 
     tags = TaggableManager()
 
@@ -59,6 +70,8 @@ class Organization(models.Model):
 
 
 class OrganizationProfile(models.Model):
+    name = models.CharField(blank=True, verbose_name=_('Name'), max_length=255)
+    purpose = models.TextField(blank=True, verbose_name=_('Purpose of the organization'))
     organization = models.OneToOneField(Organization, related_name='profile')
     www = models.URLField(blank=True)
     facebook = models.URLField(blank=True)
@@ -74,7 +87,3 @@ class OrganizationProfile(models.Model):
     def __str__(self):
         return '{} profile'.format(self.organization.name)
 
-
-class Category(models.Model):
-    name = models.CharField(verbose_name=_('nazwa'), max_length=255,)
-    organization = models.ForeignKey(Organization)
