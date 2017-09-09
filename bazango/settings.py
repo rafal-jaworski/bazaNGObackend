@@ -100,6 +100,16 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'bazango',
+        'USER': 'bazango',
+        'PASSWORD': 'bazango',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
