@@ -175,3 +175,5 @@ CRISPY_TEMPLATE_PACK = 'uni_form'
 
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
+
+CORS_ORIGIN_ALLOW_ALL = True
