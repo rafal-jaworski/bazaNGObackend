@@ -19,7 +19,8 @@ class Command(BaseCommand):
         self.stdout.write("KRS:\t{}".format(organization.krs))
         mapped_layers = {Organization.LAYER_MAP[layer]: [{Person.FIELD_MAP[k][0]: Person.FIELD_MAP[k][1](v)
                                                           for k, v in person.items() if k in Person.FIELD_MAP.keys()}
-                                                         for person in persons if person.get('osoba_id')]
+                                                         for person in persons if person.get('osoba_id') and
+                                                         person.get('data_urodzenia') == '0000-00-00']
                          for layer, persons in layers.items()
                          if layer in Organization.LAYER_MAP.keys()}
 
