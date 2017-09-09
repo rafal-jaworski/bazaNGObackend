@@ -37,10 +37,34 @@ class Category(models.Model):
         return '{} ({})'.format(self.name, self.organizations.count())
 
 
+class Person(models.Model):
+    FIELD_MAP = {
+        "nazwa": ("full_name", str),
+        "data_urodzenia": ("date_of_birth", str),
+        "osoba_id": ("external_id", str),
+        "funkcja": ("position", str),
+    }
+    external_id = models.IntegerField(unique=True, verbose_name=_('ID in KRS database'))
+    full_name = models.CharField(blank=True, max_length=255, verbose_name=_('full_name'))
+    position = models.CharField(blank=True, max_length=255, verbose_name=_('position'))
+    date_of_birth = models.DateField(blank=True, null=True, verbose_name=_('date of birth'))
+    created_at = models.DateTimeField(auto_now_add=True)
+    modified_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = _('Person')
+        verbose_name_plural = _('Persons')
+
+
 class Organization(models.Model):
+    LAYER_MAP = {
+        'reprezentacja': 'administration',
+        'nadzor': 'supervisory_authority',
+    }
     external_id = models.IntegerField(blank=True, null=True, verbose_name=_('ID in KRS database'))
     nip = models.CharField(blank=True, max_length=255)
-    krs = models.CharField(blank=True, unique=True, max_length=255)
+    krs = models.CharField(blank=True, max_length=255)
+    external_department_number = models.CharField(blank=True, max_length=255)
     name = models.CharField(blank=True, verbose_name=_('Name'), max_length=255)
     short_name = models.CharField(blank=True, verbose_name=_('Short name'), max_length=255)
     purpose = models.TextField(blank=True, verbose_name=_('Purpose of the organization'))
@@ -56,6 +80,8 @@ class Organization(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
     categories = models.ManyToManyField(Category, blank=True, related_name='organizations')
+    administration = models.ManyToManyField(Person, related_name='administers', verbose_name=_('organization|administration'))
+    supervisory_authority = models.ManyToManyField(Person, related_name='supervise', verbose_name=_('organization|supervisory authority'))
 
     tags = TaggableManager()
 
