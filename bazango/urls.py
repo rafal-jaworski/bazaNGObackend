@@ -16,7 +16,8 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from rest_framework.routers import DefaultRouter
-from .contrib.organization.views import OrganizationViewSet, CategoryViewSet, OrganizationProfileProposedChangeViewSet
+from .contrib.organization.views import (OrganizationViewSet, CategoryViewSet, OrganizationProfileProposedChangeViewSet,
+                                         FileUploadView)
 from .contrib.tags.views import TagViewSet
 
 
@@ -26,6 +27,7 @@ router.register(r'tag', TagViewSet)
 router.register(r'category', CategoryViewSet)
 router.register(r'category-proposal', OrganizationProfileProposedChangeViewSet)
 
+
 api_urlpatterns = [
     url(r'api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'', include(router.urls)),
@@ -33,7 +35,8 @@ api_urlpatterns = [
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^api/', include(api_urlpatterns))
+    url(r'^api/', include(api_urlpatterns)),
+    url(r'^upload/(?P<filename>[^/]+)$', FileUploadView.as_view())
 ]
 
 

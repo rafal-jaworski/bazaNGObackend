@@ -1,8 +1,9 @@
-from rest_framework import viewsets
+import pyexcel
+from rest_framework import viewsets, views, parsers, response, status
 
 from bazango.contrib.organization.filters import OrganizationFilterSet
 from .models import Organization, Category, OrganizationProfileProposedChange
-from .serializers import OrganizationSerializer, CategorySerializer, OrganizationProfileProposedChangeSerializer
+from .serializers import (OrganizationSerializer, CategorySerializer, OrganizationProfileProposedChangeSerializer)
 
 
 class OrganizationViewSet(viewsets.ModelViewSet):
@@ -22,3 +23,12 @@ class CategoryViewSet(viewsets.ModelViewSet):
 class OrganizationProfileProposedChangeViewSet(viewsets.ModelViewSet):
     queryset = OrganizationProfileProposedChange.objects.all()
     serializer_class = OrganizationProfileProposedChangeSerializer
+
+
+class FileUploadView(views.APIView):
+    parser_classes = (parsers.FileUploadParser,)
+
+    def put(self, request, filename, format=None):
+        file_obj = request.data['file']
+        file_obj.save_to_database(Organization)
+        return response.Response(status=201)
