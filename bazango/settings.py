@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 from django.utils.translation import ugettext_lazy as _
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -134,11 +135,17 @@ LANGUAGES = [
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = './static/'
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
+)
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 ###
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['*']
 
 REST_FRAMEWORK = {
@@ -153,3 +160,6 @@ REST_FRAMEWORK = {
 
 TAGGIT_CASE_INSENSITIVE = True
 CRISPY_TEMPLATE_PACK = 'uni_form'
+
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)

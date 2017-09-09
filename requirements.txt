@@ -10,3 +10,5 @@ django-taggit
 django-taggit-serializer
 six
 gunicorn
+dj-database-url
+whitenoise

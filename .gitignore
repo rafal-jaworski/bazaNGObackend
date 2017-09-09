@@ -97,5 +97,4 @@ ENV/
 
 # mypy
 .mypy_cache/
-/bazaNGObackend/bazaNGObackend/conf/development.py
 /.idea
