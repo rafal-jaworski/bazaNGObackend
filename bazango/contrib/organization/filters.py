@@ -8,5 +8,6 @@ class OrganizationFilterSet(django_filters.FilterSet):
         model = Organization
         fields = {
             'name': ['exact', 'contains'],
-            'tags__name': ['in']
+            'tags__name': ['in'],
+            'categories__name': ['in'],
         }

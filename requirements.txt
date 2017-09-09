@@ -9,3 +9,4 @@ djangorestframework-camel-case
 django-taggit
 django-taggit-serializer
 six
+gunicorn

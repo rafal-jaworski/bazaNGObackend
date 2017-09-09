@@ -34,7 +34,7 @@ class Category(models.Model):
         verbose_name_plural = _('Categories')
 
     def __str__(self):
-        return '{}({})'.format(self.name, self.organization_set.count())
+        return '{} ({})'.format(self.name, self.organizations.count())
 
 
 class Organization(models.Model):
@@ -55,7 +55,7 @@ class Organization(models.Model):
     is_active = models.BooleanField(verbose_name=_('organization|is_active'), default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
-    categories = models.ManyToManyField(Category, null=True, blank=True, related_name='organizations')
+    categories = models.ManyToManyField(Category, blank=True, related_name='organizations')
 
     tags = TaggableManager()
 

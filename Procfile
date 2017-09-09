@@ -1,0 +1,1 @@
+web: gunicorn bazango.wsgi:application --log-file -
